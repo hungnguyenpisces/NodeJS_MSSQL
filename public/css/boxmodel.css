@@ -1,0 +1,46 @@
+div{
+    width: 500px;
+    height: 400px;
+    float: left; /* left right none */
+    border: 1px solid red;/* solid dotted dashed */
+    /*
+    border-top:
+    border-right:
+    border-bottom:
+    border-left:
+     */
+    margin:10px;
+    /*
+        margin-top:
+        margin-right:
+        margin-bottom:
+        margin-left:
+     */
+    padding:15px;
+    /*
+        padding-top:
+        padding-right
+        padding-bottom
+        padding-left
+     */
+    /*box-shadow: 0 0 15px red;*/
+
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+#box-s{
+    box-shadow: 0px 0px 10px red;/* x y width-shadow color */
+    /*margin-top: -50px;*/
+}
+.box-s1{
+    border-radius: 10px;
+    opacity: 0.5;
+}
+.box-s1:hover{
+    opacity: 1;
+}
+.box{
+    background-color: aquamarine;
+}

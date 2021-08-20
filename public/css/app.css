@@ -1,0 +1,40 @@
+body{
+    background-image: url("../images/dtvn.jpg");
+    /*background-size: contain;!* cover *!*/
+    background-repeat: no-repeat;/* no-repeat repeat repeat-x repeat-y */
+    /*
+       nguyên lý cây thư mục ( con kiến leo cây)
+       ../ đi lên ( ko đc gọi tên thu mục cha)
+       thư mục/  -> đi sang ( vào thư mục)
+       tên tệp --> đi xuống
+    */
+}
+p{
+    color: rgb(180, 90, 90); /* RGB  HEX (0 1 2 3 4 5 6 7 8 9 A B C D E F) Name */
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100 ;/* 100 300 400(normal) 500 600 700(bold) 800 */
+    text-decoration: none;/* underline line-through overline none */
+    text-transform: capitalize;/* lowercase uppercase capitalize  none*/
+    line-height: 1.5;
+    text-indent: 20px;
+    font-style: normal;/* italic  normal*/
+    text-align: justify;/* left  right center justify */
+
+    background-color: #78efc7;
+
+}
+hr{
+    background-color: red;
+    color: red;
+    border-bottom: 1px solid red;
+}
+h1{
+    color:#aabbcc; /*  property : value */
+}
+a{
+    text-decoration: none;
+}
+span{
+    color:orange;
+}

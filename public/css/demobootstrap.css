@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    font-size: 14px;
+    color:#333333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #fcfcfc;
+}
+.header{
+    background-color: #ffffff;
+    border-bottom: 1px solid #aabbcc;
+    padding: 20px 0;
+}
+.logo a{ /* thẻ a nằm trong khu vực của 1 phần tử có class là logo */
+    font-size: 28px;
+    color: #222222;
+    text-decoration: none;
+    font-weight: 700;
+}
+.logo p{
+    font-size: 15px;
+    color: #444444;
+}
+.toplinks ul{
+    float: right;
+}
+.toplinks li{
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+}
+.toplinks  a{
+    color: #222222;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 52px;
+}
+.nav{
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #aabbcc;
+}
+.menu{
+    float: left;
+}
+.menu li{
+    float: left;
+    list-style: none;
+    margin-right: 25px;
+}
+.menu li a{
+    font-size: 15px;
+    color: #222222;
+    font-weight: 500;
+    text-decoration: none;
+}
+.mernu-right{
+    float: right;
+}
+.mernu-right a{
+    font-size: 15px;
+    color: #222222;
+    font-weight: 500;
+    text-decoration: none;
+}
+.sidebar .box{
+    float: left;
+    width: calc(100% - 60px); /* 100% * (kích thước theo px của khối cha) - 60px*/
+    padding: 30px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+.item{
+    float:left;
+    width: 100%;
+    background-color: aquamarine;
+}
+.item img{
+    height: 200px;
+    max-width: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sản phẩm</title>
+    <base href="http://localhost:5000/" />
+    <!-- Latest compiled and minified CSS -->
+    <%- include("head")%>
+    <link rel="stylesheet" href="css/demobootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="css/assignment3.css" type="text/css"/>
+</head>
+<body>
+<%- include("header")%>
+<%- include("nav")%>
+
+<section class="main col-md-12">
+    <div class="container">
+        <h1><%= p.TenSP %></h1>
+        <p><%= p.MoTa %></p>
+    </div>
+</section>
+<%- include("footer") %>
+</body>
+</html>
