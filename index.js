@@ -37,28 +37,20 @@ mssql.connect(config, function (err) {
 });
 // tao doi tuong truy van du lieu
 var sql = new mssql.Request();
-app.get("/don-hang", function (req, res) {
-	var dh = "use Ass5 select * from DonHang;";
-	sql.query(dh, function (err, rs) {
+
+app.get("/database", function (req, res) {
+	var database = req.query.database;
+	var table = req.query.table;
+	var dbquery = `use ${database} select * from ${table}`;
+	sql.query(dbquery, function (err, rs) {
 		if (err) res.send(err);
-		else res.json(rs.recordset);
+		else res.send(rs.recordset);
 	});
 });
 
 // routing - bo dinh tuyen (nhan vien cua van phong)
-app.get("/Ass5", function (req, res) {
-	var table = req.query.table || "DonHang";
-	var dbquery = `use Ass5 select * from ${table}`;
-	console.log(table);
-	// var dbtest = "";
-	console.log(dbquery);
-	sql.query(dbquery, function (er, rs) {
-		if (er) res.send(er);
-		else
-			res.render("home", {
-				result: rs.recordset,
-			});
-	});
+app.get("/", function (req, res) {
+		res.render("home");
 });
 
 app.get("/hang-hoa", function (req, res) {
