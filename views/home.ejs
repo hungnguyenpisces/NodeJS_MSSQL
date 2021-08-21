@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#labs8">LabS8</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="pill" href="#w3db">W3database</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -46,24 +49,26 @@
                         <h3>Database Ass5</h3>
                         <ul class="nav nav-tabs nav-justified">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#ass5dh">Đơn Hàng</a>
+                                <!-- <input type="hidden" id="db-name" value="Ass5">
+                                <input type="hidden" id="table-name" value="DonHangSP"> -->
+                                <a class="nav-link active" data-toggle="tab" href="#ass5dh" onclick="ass5dh()">Đơn
+                                    Hàng</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5dhsp">Đơn Hàng
+                                <a class="nav-link" data-toggle="tab" href="#ass5dhsp" onclick="ass5dhsp()">Đơn Hàng
                                     SP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5hh">Hàng Hóa</a>
+                                <a class="nav-link" data-toggle="tab" href="#ass5hh" onclick="ass5hh()">Hàng Hóa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5kh">Khách Hàng</a>
+                                <a class="nav-link" data-toggle="tab" href="#ass5kh" onclick="ass5kh()">Khách Hàng</a>
                             </li>
                         </ul>
 
                         <div class="tab-content">
                             <div id="ass5dh" class="tab-pane active"><br>
                                 <h3>Bảng Đơn Hàng</h3>
-                                <button onclick="donhang()">Load database</button>
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
@@ -73,16 +78,13 @@
                                             <th>Khách Hàng ID</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="donhang">
-                                        
+                                    <tbody id="ass5donhang">
+
                                     </tbody>
                                 </table>
                             </div>
                             <div id="ass5dhsp" class="tab-pane fade"><br>
                                 <h3>Bảng Đơn Hàng SP</h3>
-                                    <!-- <input type="hidden" id="db-name" value="Ass5">
-                                    <input type="hidden" id="table-name" value="DonHangSP"> -->
-                                    <button onclick="donhangsp()">Load database</button>
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
@@ -92,13 +94,12 @@
                                             <th>Thành Tiền</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="donhangsp">
+                                    <tbody id="ass5donhangsp">
                                     </tbody>
                                 </table>
                             </div>
                             <div id="ass5hh" class="tab-pane fade"><br>
                                 <h3>Bảng Hàng Hóa</h3>
-                                <button onclick="hanghoa()">Load database</button>
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
@@ -109,14 +110,13 @@
                                             <th>Đơn vị</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="hanghoa">
-                                        
+                                    <tbody id="ass5hanghoa">
+
                                     </tbody>
                                 </table>
                             </div>
                             <div id="ass5kh" class="tab-pane fade"><br>
                                 <h3>Bảng Khách Hàng</h3>
-                                <button onclick="khachhang()">Load database</button>
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
@@ -126,8 +126,8 @@
                                             <th>Địa Chỉ</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="khachhang">
-                                        
+                                    <tbody id="ass5khachhang">
+
                                     </tbody>
                                 </table>
                             </div>
@@ -135,9 +135,112 @@
                     </div>
 
                     <div id="labs6" class="tab-pane fade"><br>
-                        <h3>Menu 1</h3>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat.</p>
+                        <h3>Database LabS6</h3>
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="nav-item">
+                                <!-- <input type="hidden" id="db-name" value="Ass5">
+                                <input type="hidden" id="table-name" value="DonHangSP"> -->
+                                <a class="nav-link active" data-toggle="tab" href="#labs6dkcc"
+                                    onclick="labs6dkcc()">Đăng Ký Cung Cấp</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#labs6dx" onclick="labs6dx()">Dòng Xe</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#labs6ldv" onclick="labs6ldv()">Loại Dịch
+                                    Vụ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#labs6mp" onclick="labs6mp()">Mức Phí</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#labs6ncc" onclick="labs6ncc()">Nhà Cung
+                                    Cấp</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div id="labs6dkcc" class="tab-pane active"><br>
+                                <h3>Bảng Đăng Ký Cung Cấp</h3>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã ĐKCC</th>
+                                            <th>Mã NCC</th>
+                                            <th>Mã DV</th>
+                                            <th>Dòng Xe</th>
+                                            <th>Mã Mức Phí</th>
+                                            <th>Ngày Bắt Đầu CC</th>
+                                            <th>Ngày Kết Thúc CC</th>
+                                            <th>Số Lượng Xe ĐK</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="labs6dangkycuncap">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="labs6dx" class="tab-pane fade"><br>
+                                <h3>Bảng Dòng Xe</h3>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Dòng Xe</th>
+                                            <th>Hãng Xe</th>
+                                            <th>Số Chỗ Ngồi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="labs6dongxe">
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="labs6ldv" class="tab-pane fade"><br>
+                                <h3>Bảng Loại Dịch Vụ</h3>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã Dịch Vụ</th>
+                                            <th>Tên Dịch Vụ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="labs6loaidichvu">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="labs6mp" class="tab-pane fade"><br>
+                                <h3>Bảng Mức Phí</h3>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã Mức Phí</th>
+                                            <th>Đơn Giá</th>
+                                            <th>Mô Tả</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="labs6mucphi">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="labs6ncc" class="tab-pane fade"><br>
+                                <h3>Bảng Nhà Cung Cấp</h3>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã Nhà Cung Cấp</th>
+                                            <th>Tên Nhà Cung Cấp</th>
+                                            <th>Địa Chỉ</th>
+                                            <th>Số Điện Thoại</th>
+                                            <th>Mã Số Thuế</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="labs6nhacungcap">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <div id="ass6" class="tab-pane fade"><br>
                         <h3>Menu 2</h3>
@@ -154,131 +257,42 @@
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                             doloremque laudantium, totam rem aperiam.</p>
                     </div>
+                    <div id="w3db" class="tab-pane fade"><br>
+                        <h3>Select Database</h3>
+                        <div class="row">
+                            <select class="form-control col-md-3" name="database" id="db-name" onchange="handleChange()">
+                                <option value="Ass5">Database Ass5</option>
+                                <option value="LabS6">Database LabS6</option>
+                                <option value="Ass6">Database Ass6</option>
+                                <option value="LabS7">Database LabS7</option>
+                                <option value="LabS8">Database LabS8</option>
+                                <option value="W3DB">Database W3</option>
+                            </select>
+                            <select class="form-control col-md-3" name="table" id="table-name">
+                            </select>
+                            <button class="btn btn-primary col-md-3" onclick="loaddb()">Load Database</button>
+                            <br>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr id="w3head">
+                                    </tr>
+                                </thead>
+                                <tbody id="w3body">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
 
             </div>
         </div>
 
-        <script type="text/javascript">
-            function donhangsp() {
-                
-                $.ajax({
-                    url: '/database',
-                    method: 'GET',
-                    data: {
-                        database: 'Ass5',
-                        table: 'DonHangSP'
-                        // database: $('#db-name').val(),
-                        // table: $('#table-name').val()
-                    },
-                    success: function (rs) {
-                        $('#donhangsp').html("");
-                        for (var key in rs) {
-                            var result = `
-                            <tr>
-                                <td>${rs[key].MaSoDonHang}</td>
-                                <td>${rs[key].MaSP}</td>
-                                <td>${rs[key].SoLuong}</td>
-                                <td>${rs[key].ThanhTien}</td>
-                            </tr>
-                            `;
-                            $('#donhangsp').append(result);
-                            console.log(rs[key]);
-                        }
+        <script src="./js/loaddatabase.js"></script>
 
-                    }
-                });
-            }
-            function donhang() {
-                
-                $.ajax({
-                    url: '/database',
-                    method: 'GET',
-                    data: {
-                        database: 'Ass5',
-                        table: 'DonHang'
-                        // database: $('#db-name').val(),
-                        // table: $('#table-name').val()
-                    },
-                    success: function (rs) {
-                        $('#donhang').html("");
-                        for (var key in rs) {
-                            var result = `
-                            <tr>
-                                <td>${rs[key].MaSoDonHang}</td>
-                                <td>${rs[key].Ngay}</td>
-                                <td>${rs[key].TongTien}</td>
-                                <td>${rs[key].KhachHangID}</td>
-                            </tr>
-                            `;
-                            $('#donhang').append(result);
-                            console.log(rs[key]);
-                        }
-
-                    }
-                });
-            }
-            function hanghoa() {
-                
-                $.ajax({
-                    url: '/database',
-                    method: 'GET',
-                    data: {
-                        database: 'Ass5',
-                        table: 'HangHoa'
-                        // database: $('#db-name').val(),
-                        // table: $('#table-name').val()
-                    },
-                    success: function (rs) {
-                        $('#hanghoa').html("");
-                        for (var key in rs) {
-                            var result = `
-                            <tr>
-                                <td>${rs[key].MaSP}</td>
-                                <td>${rs[key].TenSP}</td>
-                                <td>${rs[key].MoTa}</td>
-                                <td>${rs[key].Gia}</td>
-                                <td>${rs[key].DonVi}</td>
-                            </tr>
-                            `;
-                            $('#hanghoa').append(result);
-                            console.log(rs[key]);
-                        }
-
-                    }
-                });
-            }
-            function khachhang() {
-                
-                $.ajax({
-                    url: '/database',
-                    method: 'GET',
-                    data: {
-                        database: 'Ass5',
-                        table: 'KhachHang'
-                        // database: $('#db-name').val(),
-                        // table: $('#table-name').val()
-                    },
-                    success: function (rs) {
-                        $('#khachhang').html("");
-                        for (var key in rs) {
-                            var result = `
-                            <tr>
-                                <td>${rs[key].ID}</td>
-                                <td>${rs[key].TenKhachHang}</td>
-                                <td>${rs[key].SoDienThoai}</td>
-                                <td>${rs[key].DiaChi}</td>
-                            </tr>
-                            `;
-                            $('#khachhang').append(result);
-                            console.log(rs[key]);
-                        }
-
-                    }
-                });
-            }
+        <script>
         </script>
+
     </body>
 
 </html>

@@ -36,8 +36,16 @@ mssql.connect(config, function (err) {
 	else console.log("Database is connected...");
 });
 // tao doi tuong truy van du lieu
-var sql = new mssql.Request();
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
+app.post("/insertDB", function(req,res){
+	var ten = req.body.value
+	var txt_sql = "insert into <table>(colum,colum...)values(req.body.value)"
+})
+
+var sql = new mssql.Request();
 app.get("/database", function (req, res) {
 	var database = req.query.database;
 	var table = req.query.table;
