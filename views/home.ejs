@@ -6,7 +6,7 @@
         <title>Trang chủ</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -22,7 +22,7 @@
                     <!-- Nav pills -->
                     <ul class="nav nav-pills" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="pill" href="#ass5">Ass5</a>
+                            <a class="nav-link" data-toggle="pill" href="#ass5">Ass5</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="pill" href="#labs6">LabS6</a>
@@ -37,7 +37,7 @@
                             <a class="nav-link" data-toggle="pill" href="#labs8">LabS8</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="pill" href="#w3db">W3database</a>
+                            <a class="nav-link active" data-toggle="pill" href="#w3db">W3database</a>
                         </li>
                     </ul>
                 </div>
@@ -45,24 +45,24 @@
             <div class="row">
 
                 <div class="col-md-12 tab-content">
-                    <div id="ass5" class="tab-pane active"><br>
+                    <div id="ass5" class="tab-pane fade"><br>
                         <h3>Database Ass5</h3>
                         <ul class="nav nav-tabs nav-justified">
                             <li class="nav-item">
                                 <!-- <input type="hidden" id="db-name" value="Ass5">
                                 <input type="hidden" id="table-name" value="DonHangSP"> -->
-                                <a class="nav-link active" data-toggle="tab" href="#ass5dh" onclick="ass5dh()">Đơn
+                                <a class="nav-link active" data-toggle="tab" href="#ass5dh">Đơn
                                     Hàng</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5dhsp" onclick="ass5dhsp()">Đơn Hàng
+                                <a class="nav-link" data-toggle="tab" href="#ass5dhsp">Đơn Hàng
                                     SP</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5hh" onclick="ass5hh()">Hàng Hóa</a>
+                                <a class="nav-link" data-toggle="tab" href="#ass5hh">Hàng Hóa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5kh" onclick="ass5kh()">Khách Hàng</a>
+                                <a class="nav-link" data-toggle="tab" href="#ass5kh">Khách Hàng</a>
                             </li>
                         </ul>
 
@@ -140,21 +140,20 @@
                             <li class="nav-item">
                                 <!-- <input type="hidden" id="db-name" value="Ass5">
                                 <input type="hidden" id="table-name" value="DonHangSP"> -->
-                                <a class="nav-link active" data-toggle="tab" href="#labs6dkcc"
-                                    onclick="labs6dkcc()">Đăng Ký Cung Cấp</a>
+                                <a class="nav-link active" data-toggle="tab" href="#labs6dkcc">Đăng Ký Cung Cấp</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6dx" onclick="labs6dx()">Dòng Xe</a>
+                                <a class="nav-link" data-toggle="tab" href="#labs6dx">Dòng Xe</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6ldv" onclick="labs6ldv()">Loại Dịch
+                                <a class="nav-link" data-toggle="tab" href="#labs6ldv">Loại Dịch
                                     Vụ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6mp" onclick="labs6mp()">Mức Phí</a>
+                                <a class="nav-link" data-toggle="tab" href="#labs6mp">Mức Phí</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6ncc" onclick="labs6ncc()">Nhà Cung
+                                <a class="nav-link" data-toggle="tab" href="#labs6ncc">Nhà Cung
                                     Cấp</a>
                             </li>
                         </ul>
@@ -257,10 +256,11 @@
                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                             doloremque laudantium, totam rem aperiam.</p>
                     </div>
-                    <div id="w3db" class="tab-pane fade"><br>
-                        <h3>Select Database</h3>
-                        <div class="row">
-                            <select class="form-control col-md-3" name="database" id="db-name" onchange="handleChange()">
+                    <div id="w3db" class="tab-pane active"><br>
+                        <form class="row">
+                            <select class="form-control col-md-3 mr-3" name="database" id="db-name"
+                                onchange="handleChange()" required>
+                                <option value="" disabled selected hidden>Select from Database</option>
                                 <option value="Ass5">Database Ass5</option>
                                 <option value="LabS6">Database LabS6</option>
                                 <option value="Ass6">Database Ass6</option>
@@ -268,10 +268,25 @@
                                 <option value="LabS8">Database LabS8</option>
                                 <option value="W3DB">Database W3</option>
                             </select>
-                            <select class="form-control col-md-3" name="table" id="table-name">
+                            <select class="form-control col-md-3 mr-3" name="table" id="table-name" required>
+                                <option value="" disabled selected hidden>Select from table</option>
                             </select>
-                            <button class="btn btn-primary col-md-3" onclick="loaddb()">Load Database</button>
-                            <br>
+                            <button class="btn btn-primary col-md-3" onclick="selectdb()">Load Database</button>
+                        </form>
+                        <form class="row">
+                                <div class="input-group mt-3 mb-3">
+                                    <div class="input-group-prepend">
+                                        <select class="form-control" name="column" id="col-name" required>
+                                            <option value="" disabled selected hidden>Search on column</option>
+                                        </select>
+                                    </div>
+                                    <input type="text" class="form-control" id="keyword" name="keyword" value="" placeholder="Search..." required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" onclick="searchEnter()">Search</button>
+                                    </div>
+                                </div>
+                        </form>
+                        <div class="row">
                             <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr id="w3head">

@@ -55,6 +55,17 @@ app.get("/database", function (req, res) {
 		else res.send(rs.recordset);
 	});
 });
+app.get("/search", function (req, res) {
+	var database = req.query.database;
+	var table = req.query.table;
+	var column = req.query.column;
+	var keyword = req.query.keyword;
+	var dbquery = `use ${database} select * from ${table} where ${column} like N'%${keyword}%'`;
+	sql.query(dbquery, function (err, rs) {
+		if (err) res.send(err);
+		else res.send(rs.recordset);
+	});
+});
 
 // routing - bo dinh tuyen (nhan vien cua van phong)
 app.get("/", function (req, res) {
