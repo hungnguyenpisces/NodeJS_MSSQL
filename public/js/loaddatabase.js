@@ -1,15 +1,16 @@
 $("form").submit(function (e) {
 	e.preventDefault();
 });
+var formData = {};
 function selectdb() {
 	var database = $("#db-name").val();
 	var table = $("#table-name").val();
 	if (database == null || table == null) {
-		$("#col-name").html(
-			`<option value="" disabled selected hidden>Search on column</option>`
-		);
+		return;
 	} else {
-		$("#col-name").html("");
+		for (var key in formData) {
+			delete formData[key];
+		}
 		loaddb();
 	}
 }
@@ -20,13 +21,23 @@ function loaddb() {
 		data: {
 			database: $("#db-name").val(),
 			table: $("#table-name").val(),
-			column: $("#col-name").val(),
 		},
 		success: function (rs) {
-			$("#col-name").html("");
+			$("#search-col-name").html(
+				`<option value="" disabled selected>Search on column</option>`
+			);
+			$("#update-col-name1").html(
+				`<option value="" disabled selected>Update on column</option>`
+			);
+			$("#update-col-name2").html(
+				`<option value="" disabled selected>Column to reference</option>`
+			);
+			$("#delete-col-name").html(
+				`<option value="" disabled selected>Delete on column</option>`
+			);
 			$("#w3head").html("");
 			$("#w3body").html("");
-
+			$("#add-db-row").html("");
 			for (var values in rs[0]) {
 				var col = `
 							<th>${values}</th>
@@ -34,8 +45,57 @@ function loaddb() {
 				var colname = `
 							<option value="${values}">${values}</option>
 							`;
+				var addDBrow = `
+                                    <input type="text" class="form-control" placeholder="Enter ${values}" name="${values}" required>
+				`;
 				$("#w3head").append(col);
-				$("#col-name").append(colname);
+				$("#search-col-name").append(colname);
+				$("#update-col-name1").append(colname);
+				$("#update-col-name2").append(colname);
+				$("#delete-col-name").append(colname);
+				$("#add-db-row").append(addDBrow);
+				formData[values] = "";
+			}
+			$("#add-db-row").append(`<div class="input-group-append">
+			<button class="btn btn-success" onclick="insertdb()">Add</button>
+		</div>`);
+			for (var key in rs) {
+				var row = `
+					<tr id="bodyrow${key}"></tr>
+				`;
+				$("#w3body").append(row);
+				for (var values in rs[key]) {
+					var td = `
+						<td>${rs[key][values]}</td>
+					`;
+					$(`#bodyrow${key}`).append(td);
+				}
+				// console.log(rs[key]);
+			}
+		},
+	});
+}
+
+function insertdb() {
+	console.log(formData);
+	$.ajax({
+		url: "/insertdb",
+		method: "POST",
+		data: {
+			database: $("#db-name").val(),
+			table: $("#table-name").val(),
+			formData: formData
+		},
+		success: function (rs) {
+			$("#w3head").html("");
+			$("#w3body").html("");
+
+			for (var values in rs[0]) {
+				var col = `
+							<th>${values}</th>
+						`;
+				$("#w3head").append(col);
+				// console.log(values);
 			}
 
 			for (var key in rs) {
@@ -49,13 +109,14 @@ function loaddb() {
 					`;
 					$(`#bodyrow${key}`).append(td);
 				}
-				console.log(rs[key]);
+				// console.log(rs[key]);
 			}
 		},
 	});
 }
+
 function searchEnter() {
-	var column = $("#col-name").val();
+	var column = $("#search-col-name").val();
 	var keyword = $("#keyword").val();
 	if (column == null || keyword == "") {
 		return;
@@ -70,7 +131,7 @@ function searchdb() {
 		data: {
 			database: $("#db-name").val(),
 			table: $("#table-name").val(),
-			column: $("#col-name").val(),
+			column: $("#search-col-name").val(),
 			keyword: $("#keyword").val(),
 		},
 		success: function (rs) {
@@ -96,12 +157,11 @@ function searchdb() {
 					`;
 					$(`#bodyrow${key}`).append(td);
 				}
-				console.log(rs[key]);
+				// console.log(rs[key]);
 			}
 		},
 	});
 }
-
 var childs = {
 	Ass5: [
 		{
@@ -232,4 +292,44 @@ function handleChange() {
 		childSelect.appendChild(optionEle);
 	});
 }
-// handleChange();
+
+function addbtn() {
+	var database = $("#db-name").val();
+	var table = $("#table-name").val();
+	if (database == null || table == null) {
+		selectdb();
+		return;
+	} else {
+		$("#add-db").slideToggle();
+	}
+}
+function updatebtn() {
+	var database = $("#db-name").val();
+	var table = $("#table-name").val();
+	if (database == null || table == null) {
+		selectdb();
+		return;
+	} else {
+		$("#update-db").slideToggle();
+	}
+}
+function deletebtn() {
+	var database = $("#db-name").val();
+	var table = $("#table-name").val();
+	if (database == null || table == null) {
+		selectdb();
+		return;
+	} else {
+		$("#delete-db").slideToggle();
+	}
+}
+function searchbtn() {
+	var database = $("#db-name").val();
+	var table = $("#table-name").val();
+	if (database == null || table == null) {
+		selectdb();
+		return;
+	} else {
+		$("#search-db").slideToggle();
+	}
+}

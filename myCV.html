@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"
+            integrity="sha512-b3xr4frvDIeyC3gqR1/iOi6T+m3pLlQyXNuvn5FiRrrKiMUJK3du2QqZbCywH6JxS5EOfW0DY0M6WwdXFbCBLQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link
+            href="https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,regular,500,600,700,800,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                /* background: rgb(204, 204, 204); */
+                font-family: 'JetBrains Mono';
+                font-size: 14px;
+                background: #282822;
+            }
+
+            page {
+                /* display: block; */
+                /* margin: 0 auto; */
+                /* margin-bottom: 0.5cm; */
+                /* box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5); */
+            }
+
+            page[size="A4"] {
+                /* width: 21cm !important; */
+                /* height: 29.7cm !important; */
+                padding: 1cm !important;
+                box-sizing: border-box;
+            }
+
+            page[size="A4"][layout="landscape"] {
+                width: 29.7cm;
+                height: 21cm;
+            }
+
+            @media print {
+
+                body,
+                page {
+                    margin: 0;
+                    box-shadow: 0;
+                    /* background-color: #282822 !important; */
+                    /* -webkit-print-color-adjust: exact; */
+                }
+            }
+
+            .progress-title {
+                color: white;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.7px;
+                /* text-transform: uppercase; */
+                margin: 10px 0 5px;
+            }
+
+            .progress {
+                height: 7px;
+                background: #d6d6d6;
+                border-radius: 0;
+                box-shadow: none;
+                margin-bottom: 20px;
+                overflow: visible;
+                position: relative;
+            }
+
+            .progress .progress-bar {
+                position: relative;
+                -webkit-animation: animate-positive 2s;
+                animation: animate-positive 2s;
+            }
+
+            .progress .progress-bar:after {
+                content: "\f3c5";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                top: -20px;
+                right: -7px;
+                font-size: 25px;
+                font-weight: 700;
+                color: #414141;
+            }
+
+            .progress .progress-value {
+                display: block;
+                font-size: 12px;
+                color: #414141;
+                position: absolute;
+                top: -23px;
+                right: 0;
+            }
+
+            @-webkit-keyframes animate-positive {
+                0% {
+                    width: 0%;
+                }
+            }
+
+            @keyframes animate-positive {
+                0% {
+                    width: 0%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <page size="A4">
+                <div id="myInfo" style="    margin-bottom: 25px;display: flex;">
+                    <div>
+                        <img width="150px" height="150px" src="public/images/avata.jpg" alt=""
+                            style="float: left;border-radius: 50%;margin-right: 20px;border-style: solid;border-color: white;">
+                    </div>
+                    <div id="myContact">
+                        <h2 style="color:#A0E433 ;">Nguyen Van Hung</h2>
+                        <h5 style="color: white;margin-bottom: 10px;">Fresher NodeJS / Fresher Frontend (ReactJS)</h5>
+                        <p style="color: #aaa;margin-bottom: 0rem;">Phone: 0973772755</p>
+                        <p style="color: #aaa;margin-bottom: 0rem;">Email: hungnguyenpisces@gmail.com</p>
+                        <p style="color: #aaa;">Address: Thach That, Hanoi, Viet Nam</p>
+                    </div>
+                </div>
+                <div id="info" style="display: flex; margin-bottom: 25px;">
+                    <div id="aboutMe" style="width: 50%;">
+                        <p style="color: #777;">//ABOUT ME</p>
+                        <p style="color: white;padding-left: 15px;">
+                            I am 31 years old, just started studying to change majors as a programmer. And I feel like
+                            I have found "True Love" of my life while coding. My career path doesn't have much to do with
+                            the
+                            job I'm applying for. So I'll introduce the skills that I find suitable for this job.</p>
+                    </div>
+                    <div id="objective" style="width: 50%;">
+                        <p style="color: #777;">//OBJECTIVE</p>
+                        <p style="color: white;padding-left: 15px;">
+                            Learn more knowledge, improve my level to become a professional developer</p>
+                    </div>
+                </div>
+                <p style="color: #777;">//BASE SKILLS</p>
+            
+                <div style="height:360px;width: 360px; float: left;">
+                    <canvas id="beChart"></canvas>
+                </div>
+                <div style="height:360px;width: 360px; float: right;">
+                    <canvas id="feChart"></canvas>
+                </div>
+                <div>
+                    <p style="color: #777;">//OTHER SKILLS</p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="progress-title">Git</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width:77%; background:#8530A6;"></div>
+                                <!-- <span class="progress-value">[85%]</span> -->
+                            </div>
+            
+                            <p class="progress-title">Self-study</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width:90%; background:#5cb85c;"></div>
+                                <!-- <span class="progress-value">[60%]</span> -->
+                            </div>
+                            <p class="progress-title">VS Code</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width:55%; background:#5BC0DE;"></div>
+                                <!-- <span class="progress-value">[60%]</span> -->
+                            </div>
+                            <p class="progress-title">Critical thinking</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width:99%; background:#EFAC4D;"></div>
+                                <!-- <span class="progress-value">[60%]</span> -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p style="color: #777;">//PRACTICAL & EXAMPLE</p>
+                            <p style="color: white;margin-bottom: 0rem;">NodeJS frontend practice with team:</p>
+                            <a href="https://f4-team.herokuapp.com/">https://f4-team.herokuapp.com/</a>
+                            <p style="color: white;margin-bottom: 0rem;">My GitHub repositories:</p>
+                            <a href="https://github.com/hungnguyenpisces?tab=repositories">https://github.com/hungnguyenpisces?tab=repositories</a>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+        </page>
+        <!-- <page size="A4"></page> -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            var bec = document.getElementById('beChart');
+            var beChart = new Chart(bec, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'NodeJS',
+                        'NPM',
+                        'Database',
+                        'EJS',
+                        'JS'
+                    ],
+                    datasets: [{
+                        label: 'Back-End',
+                        data: [77, 55, 66, 66, 55],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        pointBackgroundColor: 'rgb(255, 99, 132)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(255, 99, 132)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 2
+                        }
+                    },
+                    scales: {
+                        r: {
+                            grid: {
+                                color: 'rgba(200, 200, 200, 0.2)'
+                            },
+                            angleLines: {
+                                color: 'rgba(200, 200, 200, 0.2)'
+                            },
+                            pointLabels: {
+                                color: 'rgba(200, 200, 200, 0.75)',
+                                font: {
+                                    size: 14,
+                                    family: 'JetBrains Mono'
+                                }
+                            },
+                            ticks: {
+                                display: false,
+                                color: 'red'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            },
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+            var fec = document.getElementById('feChart');
+            var feChart = new Chart(fec, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'HTML',
+                        'JS',
+                        'Bootstrap',
+                        'jQuery',
+                        'CSS'
+                    ],
+                    datasets: [{
+                        label: 'Front-End',
+                        data: [77, 55, 55, 66, 66],
+                        fill: true,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgb(54, 162, 235)',
+                        pointBackgroundColor: 'rgb(54, 162, 235)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(54, 162, 235)'
+                    }]
+                },
+                options: {
+                    elements: {
+                        line: {
+                            borderWidth: 2
+                        }
+                    },
+                    scales: {
+                        r: {
+                            grid: {
+                                color: 'rgba(200, 200, 200, 0.2)'
+                            },
+                            angleLines: {
+                                color: 'rgba(200, 200, 200, 0.2)'
+                            },
+                            pointLabels: {
+                                color: 'rgba(200, 200, 200, 0.75)',
+                                font: {
+                                    size: 14,
+                                    family: 'JetBrains Mono'
+                                }
+                            },
+                            ticks: {
+                                display: false,
+                                color: 'red'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'rgb(255, 99, 132)'
+                            },
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>

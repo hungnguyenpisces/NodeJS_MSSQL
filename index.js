@@ -40,9 +40,10 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post("/insertDB", function(req,res){
-	var ten = req.body.value
-	var txt_sql = "insert into <table>(colum,colum...)values(req.body.value)"
+app.post("/insertdb", function(req,res){
+	var ten = req.body;
+	var txt_sql = "insert into <table>(colum,colum...)values(req.body.value)";
+	console.log(ten);
 })
 
 var sql = new mssql.Request();

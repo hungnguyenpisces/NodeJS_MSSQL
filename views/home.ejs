@@ -6,10 +6,6 @@
         <title>Trang chủ</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     </head>
 
     <body>
@@ -42,267 +38,303 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
 
-                <div class="col-md-12 tab-content">
-                    <div id="ass5" class="tab-pane fade"><br>
-                        <h3>Database Ass5</h3>
-                        <ul class="nav nav-tabs nav-justified">
-                            <li class="nav-item">
-                                <!-- <input type="hidden" id="db-name" value="Ass5">
+
+            <div class="col-md-12 tab-content">
+                <div id="ass5" class="tab-pane fade"><br>
+                    <h3>Database Ass5</h3>
+                    <ul class="nav nav-tabs nav-justified">
+                        <li class="nav-item">
+                            <!-- <input type="hidden" id="db-name" value="Ass5">
                                 <input type="hidden" id="table-name" value="DonHangSP"> -->
-                                <a class="nav-link active" data-toggle="tab" href="#ass5dh">Đơn
-                                    Hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5dhsp">Đơn Hàng
-                                    SP</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5hh">Hàng Hóa</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#ass5kh">Khách Hàng</a>
-                            </li>
-                        </ul>
+                            <a class="nav-link active" data-toggle="tab" href="#ass5dh">Đơn
+                                Hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#ass5dhsp">Đơn Hàng
+                                SP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#ass5hh">Hàng Hóa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#ass5kh">Khách Hàng</a>
+                        </li>
+                    </ul>
 
-                        <div class="tab-content">
-                            <div id="ass5dh" class="tab-pane active"><br>
-                                <h3>Bảng Đơn Hàng</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã Số Đơn Hàng</th>
-                                            <th>Ngày</th>
-                                            <th>Tổng tiền</th>
-                                            <th>Khách Hàng ID</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="ass5donhang">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="ass5dhsp" class="tab-pane fade"><br>
-                                <h3>Bảng Đơn Hàng SP</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã Số Đơn Hàng</th>
-                                            <th>Mã Sản Phẩm</th>
-                                            <th>Số Lượng</th>
-                                            <th>Thành Tiền</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="ass5donhangsp">
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="ass5hh" class="tab-pane fade"><br>
-                                <h3>Bảng Hàng Hóa</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã Sản Phẩm</th>
-                                            <th>Tên Sản Phẩm</th>
-                                            <th>Mô tả</th>
-                                            <th>Giá</th>
-                                            <th>Đơn vị</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="ass5hanghoa">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="ass5kh" class="tab-pane fade"><br>
-                                <h3>Bảng Khách Hàng</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>ID Khách Hàng</th>
-                                            <th>Tên Khách Hàng</th>
-                                            <th>Số Điện Thoại</th>
-                                            <th>Địa Chỉ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="ass5khachhang">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="labs6" class="tab-pane fade"><br>
-                        <h3>Database LabS6</h3>
-                        <ul class="nav nav-tabs nav-justified">
-                            <li class="nav-item">
-                                <!-- <input type="hidden" id="db-name" value="Ass5">
-                                <input type="hidden" id="table-name" value="DonHangSP"> -->
-                                <a class="nav-link active" data-toggle="tab" href="#labs6dkcc">Đăng Ký Cung Cấp</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6dx">Dòng Xe</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6ldv">Loại Dịch
-                                    Vụ</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6mp">Mức Phí</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#labs6ncc">Nhà Cung
-                                    Cấp</a>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div id="labs6dkcc" class="tab-pane active"><br>
-                                <h3>Bảng Đăng Ký Cung Cấp</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã ĐKCC</th>
-                                            <th>Mã NCC</th>
-                                            <th>Mã DV</th>
-                                            <th>Dòng Xe</th>
-                                            <th>Mã Mức Phí</th>
-                                            <th>Ngày Bắt Đầu CC</th>
-                                            <th>Ngày Kết Thúc CC</th>
-                                            <th>Số Lượng Xe ĐK</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="labs6dangkycuncap">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="labs6dx" class="tab-pane fade"><br>
-                                <h3>Bảng Dòng Xe</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Dòng Xe</th>
-                                            <th>Hãng Xe</th>
-                                            <th>Số Chỗ Ngồi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="labs6dongxe">
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="labs6ldv" class="tab-pane fade"><br>
-                                <h3>Bảng Loại Dịch Vụ</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã Dịch Vụ</th>
-                                            <th>Tên Dịch Vụ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="labs6loaidichvu">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="labs6mp" class="tab-pane fade"><br>
-                                <h3>Bảng Mức Phí</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã Mức Phí</th>
-                                            <th>Đơn Giá</th>
-                                            <th>Mô Tả</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="labs6mucphi">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="labs6ncc" class="tab-pane fade"><br>
-                                <h3>Bảng Nhà Cung Cấp</h3>
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã Nhà Cung Cấp</th>
-                                            <th>Tên Nhà Cung Cấp</th>
-                                            <th>Địa Chỉ</th>
-                                            <th>Số Điện Thoại</th>
-                                            <th>Mã Số Thuế</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="labs6nhacungcap">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="ass6" class="tab-pane fade"><br>
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam.</p>
-                    </div>
-                    <div id="labs7" class="tab-pane fade"><br>
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam.</p>
-                    </div>
-                    <div id="labs8" class="tab-pane fade"><br>
-                        <h3>Menu 2</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam.</p>
-                    </div>
-                    <div id="w3db" class="tab-pane active"><br>
-                        <form class="row">
-                            <select class="form-control col-md-3 mr-3" name="database" id="db-name"
-                                onchange="handleChange()" required>
-                                <option value="" disabled selected hidden>Select from Database</option>
-                                <option value="Ass5">Database Ass5</option>
-                                <option value="LabS6">Database LabS6</option>
-                                <option value="Ass6">Database Ass6</option>
-                                <option value="LabS7">Database LabS7</option>
-                                <option value="LabS8">Database LabS8</option>
-                                <option value="W3DB">Database W3</option>
-                            </select>
-                            <select class="form-control col-md-3 mr-3" name="table" id="table-name" required>
-                                <option value="" disabled selected hidden>Select from table</option>
-                            </select>
-                            <button class="btn btn-primary col-md-3" onclick="selectdb()">Load Database</button>
-                        </form>
-                        <form class="row">
-                                <div class="input-group mt-3 mb-3">
-                                    <div class="input-group-prepend">
-                                        <select class="form-control" name="column" id="col-name" required>
-                                            <option value="" disabled selected hidden>Search on column</option>
-                                        </select>
-                                    </div>
-                                    <input type="text" class="form-control" id="keyword" name="keyword" value="" placeholder="Search..." required>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-success" onclick="searchEnter()">Search</button>
-                                    </div>
-                                </div>
-                        </form>
-                        <div class="row">
+                    <div class="tab-content">
+                        <div id="ass5dh" class="tab-pane active"><br>
+                            <h3>Bảng Đơn Hàng</h3>
                             <table class="table table-bordered table-striped">
                                 <thead>
-                                    <tr id="w3head">
+                                    <tr>
+                                        <th>Mã Số Đơn Hàng</th>
+                                        <th>Ngày</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Khách Hàng ID</th>
                                     </tr>
                                 </thead>
-                                <tbody id="w3body">
+                                <tbody id="ass5donhang">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="ass5dhsp" class="tab-pane fade"><br>
+                            <h3>Bảng Đơn Hàng SP</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Số Đơn Hàng</th>
+                                        <th>Mã Sản Phẩm</th>
+                                        <th>Số Lượng</th>
+                                        <th>Thành Tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ass5donhangsp">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="ass5hh" class="tab-pane fade"><br>
+                            <h3>Bảng Hàng Hóa</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Sản Phẩm</th>
+                                        <th>Tên Sản Phẩm</th>
+                                        <th>Mô tả</th>
+                                        <th>Giá</th>
+                                        <th>Đơn vị</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ass5hanghoa">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="ass5kh" class="tab-pane fade"><br>
+                            <h3>Bảng Khách Hàng</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID Khách Hàng</th>
+                                        <th>Tên Khách Hàng</th>
+                                        <th>Số Điện Thoại</th>
+                                        <th>Địa Chỉ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ass5khachhang">
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+                <div id="labs6" class="tab-pane fade"><br>
+                    <h3>Database LabS6</h3>
+                    <ul class="nav nav-tabs nav-justified">
+                        <li class="nav-item">
+                            <!-- <input type="hidden" id="db-name" value="Ass5">
+                                <input type="hidden" id="table-name" value="DonHangSP"> -->
+                            <a class="nav-link active" data-toggle="tab" href="#labs6dkcc">Đăng Ký Cung Cấp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#labs6dx">Dòng Xe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#labs6ldv">Loại Dịch
+                                Vụ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#labs6mp">Mức Phí</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#labs6ncc">Nhà Cung
+                                Cấp</a>
+                        </li>
+                    </ul>
 
+                    <div class="tab-content">
+                        <div id="labs6dkcc" class="tab-pane active"><br>
+                            <h3>Bảng Đăng Ký Cung Cấp</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã ĐKCC</th>
+                                        <th>Mã NCC</th>
+                                        <th>Mã DV</th>
+                                        <th>Dòng Xe</th>
+                                        <th>Mã Mức Phí</th>
+                                        <th>Ngày Bắt Đầu CC</th>
+                                        <th>Ngày Kết Thúc CC</th>
+                                        <th>Số Lượng Xe ĐK</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="labs6dangkycuncap">
 
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="labs6dx" class="tab-pane fade"><br>
+                            <h3>Bảng Dòng Xe</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Dòng Xe</th>
+                                        <th>Hãng Xe</th>
+                                        <th>Số Chỗ Ngồi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="labs6dongxe">
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="labs6ldv" class="tab-pane fade"><br>
+                            <h3>Bảng Loại Dịch Vụ</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Dịch Vụ</th>
+                                        <th>Tên Dịch Vụ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="labs6loaidichvu">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="labs6mp" class="tab-pane fade"><br>
+                            <h3>Bảng Mức Phí</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Mức Phí</th>
+                                        <th>Đơn Giá</th>
+                                        <th>Mô Tả</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="labs6mucphi">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="labs6ncc" class="tab-pane fade"><br>
+                            <h3>Bảng Nhà Cung Cấp</h3>
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Nhà Cung Cấp</th>
+                                        <th>Tên Nhà Cung Cấp</th>
+                                        <th>Địa Chỉ</th>
+                                        <th>Số Điện Thoại</th>
+                                        <th>Mã Số Thuế</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="labs6nhacungcap">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="ass6" class="tab-pane fade"><br>
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam.</p>
+                </div>
+                <div id="labs7" class="tab-pane fade"><br>
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam.</p>
+                </div>
+                <div id="labs8" class="tab-pane fade"><br>
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam.</p>
+                </div>
+                <div id="w3db" class="tab-pane active"><br>
+                    <form class="row">
+                        <select class="form-control col-md-3 mr-1" name="database" id="db-name"
+                            onchange="handleChange()" required>
+                            <option value="" disabled selected hidden>Select from Database</option>
+                            <option value="Ass5">Database Ass5</option>
+                            <option value="LabS6">Database LabS6</option>
+                            <option value="Ass6">Database Ass6</option>
+                            <option value="LabS7">Database LabS7</option>
+                            <option value="LabS8">Database LabS8</option>
+                            <option value="W3DB">Database W3</option>
+                        </select>
+                        <select class="form-control col-md-2 mr-1" name="table" id="table-name" required>
+                            <option value="" disabled selected hidden>Select from table</option>
+                        </select>
+                        <button class="btn btn-primary col-md-2 mr-1" onclick="selectdb()">Load Database</button>
+                        <button class="btn btn-success col-md-1 mr-1" type="button" onclick="addbtn()">Add</button>
+                        <button class="btn btn-warning col-md-1 mr-1" type="button"
+                            onclick="updatebtn()">Update</button>
+                        <button class="btn btn-danger col-md-1 mr-1" type="button" onclick="deletebtn()">Delete</button>
+                        <button class="btn btn-info col-md-1" type="button" onclick="searchbtn()">Search</button>
+                    </form>
+                    <form class="row mt-3" id="add-db" style="display: none;">
+                        <div class="input-group" id="add-db-row">
+                        </div>
+                    </form>
+                    <form class="row mt-3" id="update-db" style="display: none;">
+                        <div class="input-group">
+                            <select class="col-md-3 form-control" name="column" id="update-col-name1" required>
+                                <option value="" disabled selected>Update on column</option>
+                            </select>
+                            <input type="text" class="form-control" id="update1" name="keyword" placeholder="Value..."
+                                required>
+                            <select class="col-md-3 form-control" name="column" id="update-col-name2" required>
+                                <option value="" disabled selected>Column to reference</option>
+                            </select>
+                            <input type="text" class="form-control" id="update2" name="keyword" placeholder="Value..."
+                                required>
+                            <div class="input-group-append">
+                                <button class="btn btn-warning">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="row mt-3" id="delete-db" style="display: none;">
+                        <div class="input-group">
+                            <select class="col-md-3 form-control" name="column" id="delete-col-name" required>
+                                <option value="" disabled selected>Delete on column</option>
+                            </select>
+                            <input type="text" class="form-control" id="delete" name="keyword" placeholder="Value..."
+                                required>
+                            <div class="input-group-append">
+                                <button class="btn btn-danger">Delete</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="row mt-3" id="search-db" style="display: none;">
+                        <div class="input-group">
+                            <select class="col-md-3 form-control" name="column" id="search-col-name" required>
+                                <option value="" disabled selected>Search on column</option>
+                            </select>
+                            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Search..."
+                                required>
+                            <div class="input-group-append">
+                                <button class="btn btn-info" onclick="searchEnter()">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row mt-3">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr id="w3head">
+                                </tr>
+                            </thead>
+                            <tbody id="w3body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="./js/loaddatabase.js"></script>
 
         <script>
